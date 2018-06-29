@@ -14,11 +14,33 @@ export class CatsService {
             age: 10,
             breed: 'No idea',
         },
+        {
+            name: 'Kitty',
+            age: 4,
+            breed: 'different cat',
+        },
+        {
+            name: 'Dog',
+            age: 7,
+            breed: 'Different CatDog',
+        },
     ];
 
     create(cat: Cat) {
         console.log('Creating');
         this.cats.push(cat);
+    }
+
+    findSome(name: string): Cat[] {
+        console.log('finding all instances of ' + name + '...');
+        let cat: Cat;
+        const catArr: Cat[] = null;
+        for (cat of this.cats) {
+            if (cat.name === name) {
+                catArr.push(cat);
+            }
+        }
+        return catArr;
     }
 
     findAll(): Cat[] {
