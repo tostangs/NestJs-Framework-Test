@@ -25,7 +25,7 @@ function getConnectionOptions(): ConnectionOptions {
         logging: false,
         synchronize: true,
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-    }
+    };
 
     console.log('connection established: ' + JSON.stringify(connectionSettings));
     return connectionSettings;
@@ -42,7 +42,7 @@ exports.handler = async (event: CloudFrontRequestEvent, context: Context) => {
     let result = {
         statusCode: 200,
         headers: { 'x-custom-header' : 'my custom header value' },
-        body: tasksController.root()
+        body: tasksController.root(),
     };
     return result;
 }
